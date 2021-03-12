@@ -1,0 +1,30 @@
+* d:\circuit_design\fossee\astablemv\astablemv.cir
+
+.include BC547B.lib
+.include LED.lib
+q1 led1 net-_c2-pad2_ gnd BC547B
+q2 led2 net-_c1-pad2_ gnd BC547B
+c1  led1 net-_c1-pad2_ 22u
+c2  led2 net-_c2-pad2_ 22u
+r1  in net-_d1-pad1_ 1k
+r2  in net-_c1-pad2_ 68k
+r3  in net-_c2-pad2_ 68k
+r4  in net-_d2-pad1_ 1k
+d2 net-_d2-pad1_ led2 LED
+d1 net-_d1-pad1_ led1 LED
+v1 in gnd  dc 9
+* u1  led1 plot_v1
+* u2  led2 plot_v1
+* u3  in plot_v1
+.tran 10e-03 12e-00 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(led1)
+plot v(led2)
+plot v(in)
+.endc
+.end

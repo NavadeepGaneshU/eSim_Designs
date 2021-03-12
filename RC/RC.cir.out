@@ -1,0 +1,18 @@
+* d:\circuit_design\fossee\rc\rc.cir
+
+r1  in out 1k
+c1  out gnd 1u
+v1  in gnd sine(0 5 50 0 0)
+* u1  in plot_v1
+* u2  out plot_v1
+.tran 5e-03 30e-03 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(in)
+plot v(out)
+.endc
+.end

@@ -1,0 +1,24 @@
+* D:\Circuit_Design\FOSSEE\AstableMV\AstableMV.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: 03/10/21 21:33:27
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+Q1  LED1 Net-_C2-Pad2_ GND eSim_NPN		
+Q2  LED2 Net-_C1-Pad2_ GND eSim_NPN		
+C1  LED1 Net-_C1-Pad2_ 22u		
+C2  LED2 Net-_C2-Pad2_ 22u		
+R1  IN Net-_D1-Pad1_ 1K		
+R2  IN Net-_C1-Pad2_ 68K		
+R3  IN Net-_C2-Pad2_ 68K		
+R4  IN Net-_D2-Pad1_ 1K		
+D2  Net-_D2-Pad1_ LED2 eSim_LED		
+D1  Net-_D1-Pad1_ LED1 eSim_LED		
+v1  IN GND DC		
+U1  LED1 plot_v1		
+U2  LED2 plot_v1		
+U3  IN plot_v1		
+
+.end
